@@ -5,5 +5,8 @@ gcc datagen.c -lm
 ./a.out
 
 #plotting
-python gplot.py
+#python gplot.py
 
+rm peaks -r
+gcc peakisolation.c
+./a.out
