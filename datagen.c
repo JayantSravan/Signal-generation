@@ -37,28 +37,33 @@ int main()
 			int c = rand()%5;
 			if(c==0)
 			{
-				printf("fred\n");
+				printf("fred\t%d\t", i);
 				i=fred(a,i, base, length);
+				printf("%d\n", i);
 			}
 			else if(c==1)
 			{
-				printf("gauss\n");
+				printf("gauss\t%d\t", i);
 				i=gaussian(a,i, base, length);
+				printf("%d\n", i);
 			}
 			else if(c==2)
 			{
-				printf("lorentz\n");
+				printf("lorentz\t%d\t", i);
 				i=lorentzian(a,i, base, length);
+				printf("%d\n", i);
 			}
 			else if(c==3)
 			{
-				printf("hat\n");
+				printf("hat\t%d\t", i);
 				i=tophat(a,i, base, length);
+				printf("%d\n", i);
 			}
 			else if(c==4)
 			{
-				printf("erfd\n");
+				printf("erfd\t%d\t", i);
 				i=erfd(a,i, base, length);
+				printf("%d\n", i);
 			}
 		}
 	}
