@@ -1,12 +1,19 @@
 int lorentzian(float* a, int j, float base, int length)
 {
 	int peak = base + base/10 + rand()%((int)base/2);
-	float gamma = 1/(3.1412 * (peak - (float)base));
+	float gamma = 5 + (float)(rand()%100000)/100000;
+	float dur = 5 + rand()%10;
 	int i;
-	int k= j+3;
-	for(i=0; i<7 && i+j<length; i++)
+	int k;
+	int c=0;
+	for(i=0 ; i<length; i++)
 	{
-		a[i+j] =  (float)base + (peak - (float)base)*((gamma* gamma)/(((float)i +j - k)*((float)i + j - k) + (gamma*gamma)));
+		a[i] =  (float)a[i] + (peak - (float)base)*((gamma* gamma)/(((float)i - j )*((float)i - j) + (gamma*gamma)));
+		if(i>j && c==0 && a[i] <= 1.005*base)
+		{
+			k=i;
+			c=1;
+		}
 	}
-	return i+j;
+	return k;
 }

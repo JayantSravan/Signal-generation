@@ -2,14 +2,13 @@
 #include<stdlib.h>
 #include<math.h>
 #include<time.h>
-#include"noise.h"
+#include"poisson.h"
 #include"fileprint.h"
 #include"gauss.h"
 #include"hat.h"
 #include"lorentz.h"
 #include"fredfunc.h"
 #include"erfdfunc.h"
-
 int main()
 {
 	time_t t;
@@ -38,37 +37,32 @@ int main()
 			int c = rand()%5;
 			if(c==0)
 			{
-				printf("fred\t%d\t", i);
+				printf("fred %d\n", i);
 				i=fred(a,i, base, length);
-				printf("%d\n", i);
 			}
 			else if(c==1)
 			{
-				printf("gauss\t%d\t", i);
+				printf("gauss %d\n", i);
 				i=gaussian(a,i, base, length);
-				printf("%d\n", i);
 			}
 			else if(c==2)
 			{
-				printf("lorentz\t%d\t", i);
+				printf("lorentz %d\n", i);
 				i=lorentzian(a,i, base, length);
-				printf("%d\n", i);
 			}
 			else if(c==3)
 			{
-				printf("hat\t%d\t", i);
+				printf("hat %d\n", i);
 				i=tophat(a,i, base, length);
-				printf("%d\n", i);
 			}
 			else if(c==4)
 			{
-				printf("erfd\t%d\t", i);
+				printf("erfd %d\n", i);
 				i=erfd(a,i, base, length);
-				printf("%d\n", i);
 			}
 		}
 	}
-	noise(a, length);
+	poissonNoise(a, length);
 	output(a, length);
 	return 0;
 }

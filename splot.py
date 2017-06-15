@@ -1,4 +1,3 @@
-#! /usr/bin/python
 import matplotlib.pyplot as plt
 #file = open("data.txt", "r")
 with open("smooth.txt", "r") as f:

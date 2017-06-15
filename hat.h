@@ -1,14 +1,11 @@
-int tophat(float *a, int j, float base, int length)// float peak, float dur, float mid, int length, int base)
+int tophat(float *a, int j, float base, int length)
 {
 	int i;
-	int peak = base + base/10 + rand()%((int)base/2);
+	int peak = base + (0.1 + ((float)(rand()%6))/10)*base;
 	int dur = 20 + rand()%20;
-	//printf("%d\n",dur);
 	for(i=0; i<dur && i+j<length; i++)
 	{
-		//printf("%d ", i);
 		a[i+j] = peak;
 	}
-	//printf("\n");
 	return j+i;
 }

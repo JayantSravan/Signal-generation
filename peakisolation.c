@@ -9,7 +9,7 @@ int peaks[100][2];
 int main()
 {
 	FILE *fp = fopen("data.txt", "r");
-	float base=99.5;
+	float base=100;
 	
 	int n;
 	char c[10];
@@ -34,7 +34,7 @@ int main()
 	j=0;
 	while(j < n)
 	{
-		if(a[j] > 1.115 * base)
+		if(a[j] > 1.1 * base)
 		{
 			printf("%d->",l);
 			peaks[p][0]=l;
