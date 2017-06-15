@@ -26,7 +26,7 @@ int exponential2(float *a, int i, int peak, int lag, int length, int base)
 int fred2(float *a, int i, int base, int length)
 {
 	i++;
-	float peak = base + base/10 + rand()%((int)base/2);
+	int peak = base + (0.1 + ((float)(rand()%6))/10)*base;
 	int dur = 5 + rand()%10;
 	i = exponential2(a, i, peak, dur, length, base);
 	return i;

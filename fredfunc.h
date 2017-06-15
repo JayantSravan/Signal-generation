@@ -23,7 +23,7 @@ int exponential(float *a, int i, int peak, int lag, int length, int base)
 int fred(float *a, int i, int base, int length)
 {
 	i++;
-	int peak = base + base/10 + rand()%(base/2);
+	int peak = base + (0.1 + ((float)(rand()%6))/10)*base;
 	
 	int dur;
 	dur = 5 + rand()%15;

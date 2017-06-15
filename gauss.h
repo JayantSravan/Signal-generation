@@ -3,7 +3,7 @@ int gaussian(float* arr, int j, int base, int length)//, float a, float b, float
 	int i=0;
 	float c = 5 + rand()%10;
 	float b = 3* c;
-	float a = base + base/10 + rand()%(base/10);
+	float a = base + (0.1 + ((float)(rand()%6))/10)*base;
 	int k;
 	int p=0;
 	for(i=0; i<length; i++)
