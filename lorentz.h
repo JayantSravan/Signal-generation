@@ -1,6 +1,6 @@
 int lorentzian(float* a, int j, float base, int length)
 {
-	int peak = base + (0.1 + ((float)(rand()%6))/10)*base;
+	int peak = base + (0.3 + ((float)(rand()%5))/10)*base;
 	float gamma = 5 + (float)(rand()%100000)/100000;
 	float dur = 5 + rand()%10;
 	int i;
