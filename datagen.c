@@ -2,67 +2,70 @@
 #include<stdlib.h>
 #include<math.h>
 #include<time.h>
+#include<string.h>
+#include"erfdfunc.h"
+#include"fredfunc.h"
+#include"gauss.h"
+#include"lorentz.h"
+#include"hat.h"
 #include"poisson.h"
 #include"fileprint.h"
-#include"gauss.h"
-#include"hat.h"
-#include"lorentz.h"
-#include"fredfunc.h"
-#include"erfdfunc.h"
-int main()
+int main(int argc, char** argv)
 {
 	time_t t;
 	srand((unsigned) time(&t));
 	int n;
 	float base = 100;
-	scanf("%d", &n);
-	n = n%25;
+	n=7;
 	int length= pow(2,n);
-	float a[length], b[length];
+	float a[length];
 	
 	int i;
 	
-	for(i=0; i<=length ; i++)
+	for(i=0; i<length ; i++)
 	{
 		a[i] = base;
-		b[i] = 0;
+	}
+	float peak = 150;
+	float dur;
+	//scanf("%f%f", &peak, &dur);
+	int type=0;
+	if(argc==3 && strcmp(argv[1], "f\0")==0 )
+	{
+		type = 1;
+		dur = atof(argv[2]);
+		fred(a, 1, length, base, peak, dur);
+	}
+	else if(argc==3 && strcmp(argv[1], "g\0")==0)
+	{
+		type = 2;
+		dur = atof(argv[2]);
+		gaussian(a, peak, length/2, dur, length, base);
+	}
+	else if(argc==3 && strcmp(argv[1], "l\0")==0)
+	{
+		type = 3;
+		dur = atoi(argv[2]);
+		lorentzian(a, peak, length/2, length, base,dur);
+	}
+	else if(argc==3 && strcmp(argv[1], "t\0")==0)
+	{
+		type = 4;
+		dur = atoi(argv[2]);
+		tophat(a, peak, dur, length/2, length, base);
+	}
+	else if(argc==3 && strcmp(argv[1], "e\0")==0)
+	{
+		type = 5;
+		dur = atoi(argv[2]);
+		erfd(a, 1, length, base, peak, dur);
+	}
+	else
+	{
+		printf("Please check the parameters\n");
 	}
 	
-	for(i=0; i<length; i++)
-	{
-		int prob = rand()%100;
-		if(prob==1)
-		{
-			b[i+1]=1;
-			int c = rand()%5;
-			if(c==0)
-			{
-				printf("fred %d\n", i);
-				i=fred(a,i, base, length);
-			}
-			else if(c==1)
-			{
-				printf("gauss %d\n", i);
-				i=gaussian(a,i, base, length);
-			}
-			else if(c==2)
-			{
-				printf("lorentz %d\n", i);
-				i=lorentzian(a,i, base, length);
-			}
-			else if(c==3)
-			{
-				printf("hat %d\n", i);
-				i=tophat(a,i, base, length);
-			}
-			else if(c==4)
-			{
-				printf("erfd %d\n", i);
-				i=erfd(a,i, base, length);
-			}
-		}
-	}
 	poissonNoise(a, length);
-	output(a, length);
+	output(a, length, type);
 	return 0;
 }

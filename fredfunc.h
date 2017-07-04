@@ -1,7 +1,7 @@
-int exponential(float *a, int i, int peak, int lag, int length, int base)
+int exponential(float *a, int i, int peak, int lag, int length, float base)
 {
 	
-	int diff = (peak - base);
+	float diff = (peak - base);
 	float factor = 0.00;
 	while((float)(diff) > (factor * pow(2.72 , ((float)(lag)/100) *lag)))
 	{
@@ -20,13 +20,9 @@ int exponential(float *a, int i, int peak, int lag, int length, int base)
 	return i;
 }
 
-int fred(float *a, int i, int base, int length)
+int fred(float *a, int i, int length, float base, float peak, float dur)
 {
 	i++;
-	int peak = base + (0.3 + ((float)(rand()%5))/10)*base;
-	
-	int dur;
-	dur = 5 + rand()%15;
 	
 	i = exponential(a, i, peak, dur, length, base);
 	return i;

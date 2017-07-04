@@ -1,15 +1,43 @@
 #!/bin/bash
-# Script for running all the programs
+rm signals -r
+mkdir signals
+j=0
+i=5
+while [ $i -lt 25 ];do
+	./datagen.out l $i
+	cat data.txt>signals/$j.txt
+	let j=j+1
+	let i=i+1 
+done
 
-gcc datagen.c -lm
-./a.out
+i=5
+while [ $i -lt 25 ];do
+	./datagen.out g $i
+	cat data.txt>signals/$j.txt
+	let j=j+1
+	let i=i+1 
+done
 
-#plotting
-#python gplot.py
+i=5
+while [ $i -lt 25 ];do
+	./datagen.out t $i
+	cat data.txt>signals/$j.txt
+	let j=j+1
+	let i=i+1 
+done
 
-rm peaks -r
-gcc peakisolation.c
-./a.out
+i=5
+while [ $i -lt 25 ];do
+	./datagen.out f $i
+	cat data.txt>signals/$j.txt
+	let j=j+1
+	let i=i+1 
+done
 
-#plotting
-python gplot.py
+i=7
+while [ $i -lt 25 ];do
+	./datagen.out l $i
+	cat data.txt>signals/$j.txt
+	let j=j+1
+	let i=i+1 
+done

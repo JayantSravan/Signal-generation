@@ -1,9 +1,10 @@
-int gaussian(float* arr, int j, int base, int length)//, float a, float b, float c, int length, int base)
+//gaussian(a, peak, length/2, dur, length, base);
+int gaussian(float* arr,float peak, int j, float dur, int length, float base)
 {
 	int i=0;
-	float c = 5 + rand()%10;
+	float c = dur;
 	float b = 3* c;
-	float a = base + (0.3 + ((float)(rand()%5))/10)*base;
+	float a = peak;
 	int k;
 	int p=0;
 	for(i=0; i<length; i++)

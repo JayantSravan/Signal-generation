@@ -1,3 +1,4 @@
+//erfd(a, length/2, length, base, peak, dur);
 int exponential2(float *a, int i, int peak, int lag, int length, int base)
 {
 	
@@ -23,19 +24,17 @@ int exponential2(float *a, int i, int peak, int lag, int length, int base)
 	return i;
 }
 
-int fred2(float *a, int i, int base, int length)
+int fred2(float *a, int i, int base, int length, float peak, float dur)
 {
 	i++;
-	int peak = base + (0.3 + ((float)(rand()%5))/10)*base;
-	int dur = 5 + rand()%10;
 	i = exponential2(a, i, peak, dur, length, base);
 	return i;
 }
-
-int erfd(float *a, int i, float base,int length)//, int peak, int dur)
+//erfd(a, length/2, length, base, peak, dur);
+int erfd(float *a, int i,int length, float base, float peak, float dur)
 {
 	int j=i;
-	i = fred2(a, i,base, length);
+	i = fred2(a, i,base, length, peak, dur);
 	return i;
 }
 

@@ -1,7 +1,7 @@
-void output (float *a,int length)
+void output (float *a,int length, int type)
 {
 	FILE *fp = fopen("data.txt", "w");
-	fprintf(fp, "%d\n", length);
+	fprintf(fp, "%d %d\n", length, type);
 	int i;
 	for(i=0; i<length; i++)
 	{
