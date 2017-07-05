@@ -36,7 +36,7 @@ done
 
 i=7
 while [ $i -lt 25 ];do
-	./datagen.out l $i
+	./datagen.out e $i
 	cat data.txt>signals/$j.txt
 	let j=j+1
 	let i=i+1 

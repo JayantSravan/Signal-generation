@@ -24,7 +24,7 @@ int fred(float *a, int i, int length, float base, float peak, float dur)
 {
 	i++;
 	
-	i = exponential(a, i, peak, dur, length, base);
+	i = exponential(a, i+40, peak, dur, length, base);
 	return i;
 }
 
