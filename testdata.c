@@ -71,6 +71,7 @@ int main()
 			{
 				float dur = (500 + rand()%1000)/100;
 				printf("fred - %f %d\n", dur, i);
+				peak = 150 + rand()%120;
 				i = fred(b , i, length, base, peak, dur);
 				add2(a, b, length);
 			}
@@ -78,6 +79,7 @@ int main()
 			{
 				float dur = 5 + rand()%20;
 				printf("gaussian - %f %d\n", dur, i);
+				peak = 150 + rand()%120;
 				gaussian(b, peak, i , dur, length, base);
 				add(a,b ,length);
 				i=i+100;
@@ -86,6 +88,7 @@ int main()
 			{
 				float dur = (500 + rand()%1000)/100;
 				printf("lorentzian - %f %d\n", dur, i);
+				peak = 150 + rand()%120;
 				lorentzian(b, peak, i , length, base, dur);
 				add(a,b,length);
 				i=i+100;
@@ -94,6 +97,7 @@ int main()
 			{
 				float dur = (1500 + rand()%2000)/100;
 				printf("tophat - %f %d\n", dur, i);
+				peak = 150 + rand()%120;
 				tophat(b, peak, dur, i , length, base);
 				add2(a,b,length);
 				i=i+100;
@@ -102,6 +106,7 @@ int main()
 			{
 				float dur = (700 + rand()%1000)/100;
 				printf("erfd - %f %d\n", dur, i);
+				peak = 150 + rand()%120;
 				erfd(b, i, length, base, peak, dur);
 				add2(a,b,length);
 				i=i+150;
