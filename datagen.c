@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 	srand((unsigned) time(&t));
 	int n;
 	float base = 100;
-	n=8;
+	n=7;
 	int length= pow(2,n);
 	float a[length];
 	
@@ -33,31 +33,31 @@ int main(int argc, char** argv)
 	if(argc==3 && strcmp(argv[1], "f\0")==0 )
 	{
 		type = 1;
-		dur = atof(argv[2]);
+		dur = atof(argv[2])/10;
 		fred(a, 1, length, base, peak, dur);
 	}
 	else if(argc==3 && strcmp(argv[1], "g\0")==0)
 	{
 		type = 2;
-		dur = atof(argv[2]);
+		dur = atof(argv[2])/10;
 		gaussian(a, peak, length/2, dur, length, base);
 	}
 	else if(argc==3 && strcmp(argv[1], "l\0")==0)
 	{
-		type = 2;
-		dur = atoi(argv[2]);
+		type = 3;
+		dur = atoi(argv[2])/10;
 		lorentzian(a, peak, length/2, length, base,dur);
 	}
 	else if(argc==3 && strcmp(argv[1], "t\0")==0)
 	{
-		type = 2;
-		dur = atoi(argv[2]);
+		type = 4;
+		dur = atoi(argv[2])/10;
 		tophat(a, peak, dur, length/2, length, base);
 	}
 	else if(argc==3 && strcmp(argv[1], "e\0")==0)
 	{
-		type = 2;
-		dur = atoi(argv[2]);
+		type = 5;
+		dur = atoi(argv[2])/10;
 		erfd(a, 1, length, base, peak, dur);
 	}
 	else

@@ -2,40 +2,40 @@
 rm signals -r
 mkdir signals
 j=0
-i=5
-while [ $i -lt 25 ];do
+i=50
+while [ $i -lt 150 ];do
 	./datagen.out l $i
 	cat data.txt>signals/$j.txt
 	let j=j+1
 	let i=i+1 
 done
 
-i=5
-while [ $i -lt 25 ];do
+i=50
+while [ $i -lt 200 ];do
 	./datagen.out g $i
 	cat data.txt>signals/$j.txt
 	let j=j+1
 	let i=i+1 
 done
 
-i=5
-while [ $i -lt 25 ];do
+i=150
+while [ $i -lt 350 ];do
 	./datagen.out t $i
 	cat data.txt>signals/$j.txt
 	let j=j+1
 	let i=i+1 
 done
 
-i=5
-while [ $i -lt 25 ];do
+i=50
+while [ $i -lt 250 ];do
 	./datagen.out f $i
 	cat data.txt>signals/$j.txt
 	let j=j+1
 	let i=i+1 
 done
 
-i=7
-while [ $i -lt 25 ];do
+i=70
+while [ $i -lt 150 ];do
 	./datagen.out e $i
 	cat data.txt>signals/$j.txt
 	let j=j+1
