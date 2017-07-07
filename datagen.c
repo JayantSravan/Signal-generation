@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 	srand((unsigned) time(&t));
 	int n;
 	float base = 100;
-	n=7;
+	n=8;
 	int length= pow(2,n);
 	float a[length];
 	
@@ -59,7 +59,7 @@ int main(int argc, char** argv)
 	{
 		type = 5;
 		dur = atoi(argv[2]);
-		erfd(a, 1, length, base, peak, dur);
+		erfd(a, 50, length, base, peak, dur);
 	}
 	else
 	{
