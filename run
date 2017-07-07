@@ -1,7 +1,7 @@
 #!/bin/bash
 rm signals -r
 mkdir signals
-k=150
+
 j=0
 
 instance()
@@ -91,15 +91,15 @@ instancewonoise()
 		let i=i+1 
 	done
 }
-
-while [ $k -lt 350 ];do
-	instance
-	let k=k+10
-done
-
 k=150
 while [ $k -lt 350 ];do
+	instance
+	let k=k+20
+done
+
+k=160
+while [ $k -lt 360 ];do
 	instancewonoise
-	let k=k+10
+	let k=k+20
 done
 
