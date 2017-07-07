@@ -34,31 +34,31 @@ int main(int argc, char** argv)
 	if(argc==4 && strcmp(argv[1], "f\0")==0 )
 	{
 		type = 1;
-		dur = atof(argv[2])/10;
+		dur = atof(argv[2]);
 		fred(a, 1, length, base, peak, dur);
 	}
 	else if(argc==4 && strcmp(argv[1], "g\0")==0)
 	{
 		type = 2;
-		dur = atof(argv[2])/10;
+		dur = atof(argv[2]);
 		gaussian(a, peak, length/2, dur, length, base);
 	}
 	else if(argc==4 && strcmp(argv[1], "l\0")==0)
 	{
 		type = 3;
-		dur = atoi(argv[2])/10;
+		dur = atoi(argv[2]);
 		lorentzian(a, peak, length/2, length, base,dur);
 	}
 	else if(argc==4 && strcmp(argv[1], "t\0")==0)
 	{
 		type = 4;
-		dur = atoi(argv[2])/10;
+		dur = atoi(argv[2]);
 		tophat(a, peak, dur, length/2, length, base);
 	}
 	else if(argc==4 && strcmp(argv[1], "e\0")==0)
 	{
 		type = 5;
-		dur = atoi(argv[2])/10;
+		dur = atoi(argv[2]);
 		erfd(a, 1, length, base, peak, dur);
 	}
 	else

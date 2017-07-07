@@ -3,336 +3,103 @@ rm signals -r
 mkdir signals
 k=150
 j=0
-i=50
-while [ $i -lt 150 ];do
-	./datagen.out l $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
+
+instance()
+{
+	
+	i=2
+	while [ $i -lt 15 ];do
+		./datagen.out l $i $k
+		cat data.txt>signals/$j.$k.txt
+		let j=j+1
+		let i=i+1 
+	done
+	
+	i=5
+	while [ $i -lt 20 ];do
+		./datagen.out g $i $k
+		cat data.txt>signals/$j.$k.txt
+		let j=j+1
+		let i=i+1 
+	done
+	
+	i=15
+	while [ $i -lt 35 ];do
+		./datagen.out t $i $k
+		cat data.txt>signals/$j.$k.txt
+		let j=j+1
+		let i=i+1 
+	done
+	
+	i=5
+	while [ $i -lt 25 ];do
+		./datagen.out f $i $k
+		cat data.txt>signals/$j.$k.txt
+		let j=j+1
+		let i=i+1 
+	done
+	
+	i=3
+	while [ $i -lt 15 ];do
+		./datagen.out e $i $k
+		cat data.txt>signals/$j.$k.txt
+		let j=j+1
+		let i=i+1 
+	done
+	
+}
+
+instancewonoise()
+{
+	i=3
+	while [ $i -lt 15 ];do
+		./datagenwonoise.out l $i $k
+		cat data.txt>signals/$j..$k.txt
+		let j=j+1
+		let i=i+1 
+	done
+	
+	i=5
+	while [ $i -lt 20 ];do
+		./datagenwonoise.out g $i $k
+		cat data.txt>signals/$j..$k.txt
+		let j=j+1
+		let i=i+1 
+	done
+	
+	i=15
+	while [ $i -lt 35 ];do
+		./datagenwonoise.out t $i $k
+		cat data.txt>signals/$j..$k.txt
+		let j=j+1
+		let i=i+1 
+	done
+	
+	i=5
+	while [ $i -lt 25 ];do
+		./datagenwonoise.out f $i $k
+		cat data.txt>signals/$j..$k.txt
+		let j=j+1
+		let i=i+1 
+	done
+	
+	i=3
+	while [ $i -lt 15 ];do
+		./datagenwonoise.out e $i $k
+		cat data.txt>signals/$j..$k.txt
+		let j=j+1
+		let i=i+1 
+	done
+}
+
+while [ $k -lt 350 ];do
+	instance
+	let k=k+10
 done
 
-i=50
-while [ $i -lt 200 ];do
-	./datagen.out g $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
+k=150
+while [ $k -lt 350 ];do
+	instancewonoise
+	let k=k+10
 done
 
-i=150
-while [ $i -lt 350 ];do
-	./datagen.out t $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=50
-while [ $i -lt 250 ];do
-	./datagen.out f $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=70
-while [ $i -lt 150 ];do
-	./datagen.out e $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-let k=k+20
-
-
-
-
-
-
-
-#peak=170
-
-
-
-i=50
-while [ $i -lt 150 ];do
-	./datagen.out l $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=50
-while [ $i -lt 200 ];do
-	./datagen.out g $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=150
-while [ $i -lt 350 ];do
-	./datagen.out t $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=50
-while [ $i -lt 250 ];do
-	./datagen.out f $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=70
-while [ $i -lt 150 ];do
-	./datagen.out e $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-let k=k+20
-
-
-
-#peak=190
-
-i=50
-while [ $i -lt 150 ];do
-	./datagen.out l $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=50
-while [ $i -lt 200 ];do
-	./datagen.out g $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=150
-while [ $i -lt 350 ];do
-	./datagen.out t $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=50
-while [ $i -lt 250 ];do
-	./datagen.out f $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=70
-while [ $i -lt 150 ];do
-	./datagen.out e $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-let k=k+20
-
-
-#peak =210
-
-
-
-i=50
-while [ $i -lt 150 ];do
-	./datagen.out l $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=50
-while [ $i -lt 200 ];do
-	./datagen.out g $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=150
-while [ $i -lt 350 ];do
-	./datagen.out t $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=50
-while [ $i -lt 250 ];do
-	./datagen.out f $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=70
-while [ $i -lt 150 ];do
-	./datagen.out e $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-let k=k+20
-
-
-
-#peak=230
-
-
-i=50
-while [ $i -lt 150 ];do
-	./datagen.out l $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=50
-while [ $i -lt 200 ];do
-	./datagen.out g $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=150
-while [ $i -lt 350 ];do
-	./datagen.out t $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=50
-while [ $i -lt 250 ];do
-	./datagen.out f $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=70
-while [ $i -lt 150 ];do
-	./datagen.out e $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-let k=k+20
-
-
-
-#peak=250
-
-
-
-
-i=50
-while [ $i -lt 150 ];do
-	./datagen.out l $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=50
-while [ $i -lt 200 ];do
-	./datagen.out g $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=150
-while [ $i -lt 350 ];do
-	./datagen.out t $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=50
-while [ $i -lt 250 ];do
-	./datagen.out f $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=70
-while [ $i -lt 150 ];do
-	./datagen.out e $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-let k=k+20
-
-
-
-
-
-#peak =270
-
-
-
-
-i=50
-while [ $i -lt 150 ];do
-	./datagen.out l $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=50
-while [ $i -lt 200 ];do
-	./datagen.out g $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=150
-while [ $i -lt 350 ];do
-	./datagen.out t $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=50
-while [ $i -lt 250 ];do
-	./datagen.out f $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-i=70
-while [ $i -lt 150 ];do
-	./datagen.out e $i $k
-	cat data.txt>signals/$j.txt
-	let j=j+1
-	let i=i+1 
-done
-
-let k=k+20
