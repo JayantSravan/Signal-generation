@@ -49,57 +49,11 @@ instance()
 	
 }
 
-instancewonoise()
-{
-	i=3
-	while [ $i -lt 15 ];do
-		./datagenwonoise.out l $i $k
-		cat data.txt>signals/$j.txt
-		let j=j+1
-		let i=i+1 
-	done
-	
-	i=5
-	while [ $i -lt 20 ];do
-		./datagenwonoise.out g $i $k
-		cat data.txt>signals/$j.txt
-		let j=j+1
-		let i=i+1 
-	done
-	
-	i=15
-	while [ $i -lt 35 ];do
-		./datagenwonoise.out t $i $k
-		cat data.txt>signals/$j.txt
-		let j=j+1
-		let i=i+1 
-	done
-	
-	i=5
-	while [ $i -lt 25 ];do
-		./datagenwonoise.out f $i $k
-		cat data.txt>signals/$j.txt
-		let j=j+1
-		let i=i+1 
-	done
-	
-	i=3
-	while [ $i -lt 15 ];do
-		./datagenwonoise.out e $i $k
-		cat data.txt>signals/$j.txt
-		let j=j+1
-		let i=i+1 
-	done
-}
+
 k=150
-while [ $k -lt 350 ];do
+while [ $k -lt 360 ];do
 	instance
-	let k=k+20
+	let k=k+10
 done
 
-k=160
-while [ $k -lt 360 ];do
-	instancewonoise
-	let k=k+20
-done
 
