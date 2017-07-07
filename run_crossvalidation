@@ -1,0 +1,13 @@
+#!/bin/bash
+
+rm Signal_crossvalidation -r
+
+mkdir Signal_crossvalidation
+
+j=0
+
+while [ $j -lt $1 ];do
+	./data_crossvalidation.out
+	cat data.txt>Signal_crossvalidation/$j.txt
+	let j=j+1
+done
