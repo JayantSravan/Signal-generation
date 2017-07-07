@@ -35,7 +35,7 @@ int main(int argc, char** argv)
 	{
 		type = 1;
 		dur = atof(argv[2]);
-		fred(a, 1, length, base, peak, dur);
+		fred(a, 50, length, base, peak, dur);
 	}
 	else if(argc==4 && strcmp(argv[1], "g\0")==0)
 	{
@@ -59,14 +59,14 @@ int main(int argc, char** argv)
 	{
 		type = 5;
 		dur = atoi(argv[2]);
-		erfd(a, 50, length, base, peak, dur);
+		erfd(a, 1, length, base, peak, dur);
 	}
 	else
 	{
 		printf("Please check the parameters\n");
 	}
 	
-	poissonNoise(a, length);
+	//poissonNoise(a, length);
 	output(a, length, type);
 	return 0;
 }
