@@ -10,7 +10,7 @@ instance()
 	i=2
 	while [ $i -lt 15 ];do
 		./datagen.out l $i $k
-		cat data.txt>signals/$j.$k.txt
+		cat data.txt>signals/$j.txt
 		let j=j+1
 		let i=i+1 
 	done
@@ -18,7 +18,7 @@ instance()
 	i=5
 	while [ $i -lt 20 ];do
 		./datagen.out g $i $k
-		cat data.txt>signals/$j.$k.txt
+		cat data.txt>signals/$j.txt
 		let j=j+1
 		let i=i+1 
 	done
@@ -26,7 +26,7 @@ instance()
 	i=15
 	while [ $i -lt 35 ];do
 		./datagen.out t $i $k
-		cat data.txt>signals/$j.$k.txt
+		cat data.txt>signals/$j.txt
 		let j=j+1
 		let i=i+1 
 	done
@@ -34,7 +34,7 @@ instance()
 	i=5
 	while [ $i -lt 25 ];do
 		./datagen.out f $i $k
-		cat data.txt>signals/$j.$k.txt
+		cat data.txt>signals/$j.txt
 		let j=j+1
 		let i=i+1 
 	done
@@ -42,7 +42,7 @@ instance()
 	i=3
 	while [ $i -lt 15 ];do
 		./datagen.out e $i $k
-		cat data.txt>signals/$j.$k.txt
+		cat data.txt>signals/$j.txt
 		let j=j+1
 		let i=i+1 
 	done
@@ -54,7 +54,7 @@ instancewonoise()
 	i=3
 	while [ $i -lt 15 ];do
 		./datagenwonoise.out l $i $k
-		cat data.txt>signals/$j..$k.txt
+		cat data.txt>signals/$j.txt
 		let j=j+1
 		let i=i+1 
 	done
@@ -62,7 +62,7 @@ instancewonoise()
 	i=5
 	while [ $i -lt 20 ];do
 		./datagenwonoise.out g $i $k
-		cat data.txt>signals/$j..$k.txt
+		cat data.txt>signals/$j.txt
 		let j=j+1
 		let i=i+1 
 	done
@@ -70,7 +70,7 @@ instancewonoise()
 	i=15
 	while [ $i -lt 35 ];do
 		./datagenwonoise.out t $i $k
-		cat data.txt>signals/$j..$k.txt
+		cat data.txt>signals/$j.txt
 		let j=j+1
 		let i=i+1 
 	done
@@ -78,7 +78,7 @@ instancewonoise()
 	i=5
 	while [ $i -lt 25 ];do
 		./datagenwonoise.out f $i $k
-		cat data.txt>signals/$j..$k.txt
+		cat data.txt>signals/$j.txt
 		let j=j+1
 		let i=i+1 
 	done
@@ -86,7 +86,7 @@ instancewonoise()
 	i=3
 	while [ $i -lt 15 ];do
 		./datagenwonoise.out e $i $k
-		cat data.txt>signals/$j..$k.txt
+		cat data.txt>signals/$j.txt
 		let j=j+1
 		let i=i+1 
 	done
