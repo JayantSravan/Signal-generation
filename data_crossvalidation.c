@@ -10,10 +10,17 @@
 #include"hat.h"
 #include"poisson.h"
 #include"fileprint.h"
+#include <sys/types.h>
+#include <unistd.h>
 int main()
 {
-	time_t t;
-	srand((unsigned) time(&t));
+	
+	srand((unsigned) time(NULL) * getpid());
+	
+	int type;
+	type = 1 + rand()%5;
+	
+	
 	int n;
 	float base = 100;
 	n=8;
@@ -29,9 +36,9 @@ int main()
 	float peak = 150 + rand()%200;
 	float dur;
 	
-	int type=1 + rand()%5;
 	
-	if( type==1 )
+	rand();
+	if(type==1)
 	{
 		dur = 2 + rand()%13;
 		fred(a, 50, length, base, peak, dur);
@@ -57,6 +64,7 @@ int main()
 		erfd(a, 1, length, base, peak, dur);
 	}
 	
+	//printf("%d\n", type);
 	poissonNoise(a, length);
 	output(a, length, type);
 	return 0;
