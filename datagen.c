@@ -66,7 +66,7 @@ int main(int argc, char** argv)
 		printf("Please check the parameters\n");
 	}
 	
-	//poissonNoise(a, length);
+	poissonNoise(a, length);
 	output(a, length, type);
 	return 0;
 }
